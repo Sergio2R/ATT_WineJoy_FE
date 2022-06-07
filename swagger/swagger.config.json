@@ -9,7 +9,7 @@
             "url": "https://localhost:44328"
         }
     ],
-    "paths": {
+    "paths": { 
       "/api/Beer": {
         "get": {
           "tags": [
