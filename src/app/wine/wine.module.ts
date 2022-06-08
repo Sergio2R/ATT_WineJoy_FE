@@ -20,6 +20,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
+import { MessageService } from './services/message.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule
   ],
   providers: [
-    WineService
+    WineService,
+    MessageService
   ]
 })
 export class WineModule { }
