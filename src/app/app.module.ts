@@ -16,6 +16,7 @@ import { MatTableModule } from '@angular/material/table'
 import { WineService as ApiWineService } from './api/services';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -33,7 +34,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     MatTableModule,
     //Project
     DbzModule, 
-    WineModule,
+    WineModule, NgbModule,
   ], 
   providers: [WineService,
     ApiWineService],
