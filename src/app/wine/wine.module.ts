@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { WineService } from '../api/services';
+import { ClasificationService, WineService } from '../api/services';
 import { AddComponent } from './add-wine/add-wine.component';
 import { WineMainPageComponent } from './wine-main-page/wine-main-page';
 import { WineListComponent } from './wine-list/wine-list.component';
@@ -53,6 +53,7 @@ import { MessageService } from './services/message.service';
   ],
   providers: [
     WineService,
+    ClasificationService,
     MessageService
   ]
 })

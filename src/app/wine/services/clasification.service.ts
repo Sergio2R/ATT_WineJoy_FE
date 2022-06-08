@@ -4,12 +4,15 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 
 import { ClasificationService as ApiClasificationService } from 'src/app/api/services';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { Observable } from 'rxjs/internal/Observable';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class ClasificationService {
 
-  private _clasificationList: Clasification[] = [
+  public _clasificationList: Clasification[] = [
   ];
+  public _clasification: Clasification;
 
   public constructor(private api: ApiClasificationService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.api.apiClasificationGetClasificationListGet$Json().subscribe(rta => {
@@ -21,17 +24,16 @@ export class ClasificationService {
     return [...this._clasificationList];
   }
 
-  getClasification(id: number) {
-    this.api.apiClasificationGetClasificationGet$Json({ Id: id }).subscribe(rta => {
-      return rta;
-    });
-  }
-
   getClasificationList() {
     this.api.apiClasificationGetClasificationListGet$Json().subscribe(rta => {
       this._clasificationList = rta;
     });
-    return this._clasificationList;
+  }
+
+  getClasification(id: number) {
+    this.api.apiClasificationGetClasificationGet$Json( { Id: id }).subscribe(rta => {
+      this._clasification = rta;
+    });
   }
 
 }
