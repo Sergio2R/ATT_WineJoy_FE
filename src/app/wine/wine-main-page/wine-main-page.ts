@@ -12,12 +12,12 @@ export class WineMainPageComponent {
   nuevo: Wine = {
     // id : 10,
     name: "",
-    clasification : undefined,
-    year: undefined,
+    clasification : 0,
+    year: 2000,
     aroma: undefined,
-    swetness: undefined,
-    acidity: undefined,
-    alcohol: undefined,
+    swetness: 0,
+    acidity: 0,
+    alcohol: 0,
     notes: undefined
   }
 

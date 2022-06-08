@@ -45,10 +45,10 @@
                 {{wine.notes}}
             </td>
             <td>
-                <button type="button" class="btn btn-outline-danger btn-sm" (click)="deleteById(wine.id)" >Delete </button>
+                <button type="button" class="btn btn-warning btn-sm" (click)="updateById(wine.id)">Edit info</button>
             </td>
             <td>
-                <button type="button" class="btn btn-warning btn-sm" (click)="updateById(wine.id)" >Update</button>
+                <button type="button" class="btn btn-outline-danger btn-sm" (click)="deleteById(wine.id)">Delete</button>
             </td>
         </tr>
     </tbody>

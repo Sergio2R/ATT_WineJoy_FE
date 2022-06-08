@@ -21,16 +21,17 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 })
 export class AddComponent {
 
-    date: { year: number; month: number; };
+    date: { year: number; };
+
     maxDate = new Date();
     @Input() nuevo: Wine = {
         name: undefined,
-        clasification: undefined,
-        year: undefined,
+        clasification: 0,
+        year: 2000,
         aroma: undefined,
-        swetness: undefined,
-        acidity: undefined,
-        alcohol: undefined,
+        swetness: 0,
+        acidity: 0,
+        alcohol: 0,
         notes: undefined
     }
 
@@ -38,7 +39,7 @@ export class AddComponent {
 
     onInputChange(event: any) {
         console.log(event.value);
-      }
+    }
 
     add() {
         debugger
@@ -46,16 +47,16 @@ export class AddComponent {
 
         this.wineService.addWine(this.nuevo);
 
-        this.nuevo = {
-            id: undefined,
-            name: undefined,
-            clasification: undefined,
-            year: undefined,
-            aroma: undefined,
-            swetness: undefined,
-            acidity: undefined,
-            alcohol: undefined,
-            notes: undefined
-        }
+        // this.nuevo = {
+        //     id: undefined,
+        //     name: undefined,
+        //     clasification: undefined,
+        //     year: undefined,
+        //     aroma: undefined,
+        //     swetness: undefined,
+        //     acidity: undefined,
+        //     alcohol: undefined,
+        //     notes: undefined
+        // }
     }
 }

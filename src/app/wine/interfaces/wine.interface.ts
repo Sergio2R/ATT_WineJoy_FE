@@ -8,4 +8,5 @@ export interface Wine {
     notes?: null | string;
     swetness?: number;
     year?: number;
+    fullYear?: any;
 }
