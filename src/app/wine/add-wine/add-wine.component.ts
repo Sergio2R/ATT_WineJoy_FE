@@ -2,6 +2,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Wine } from '../interfaces/wine.interface';
 
 import { WineService } from '../services/wine.service';
+import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 @Component({
     selector: 'app-add-wine',
@@ -9,6 +20,9 @@ import { WineService } from '../services/wine.service';
 })
 export class AddComponent {
 
+    model: NgbDateStruct;
+    date: { year: number; month: number; };
+    maxDate = new Date();
     @Input() nuevo: Wine = {
         name: "test",
         clasification: 0,
@@ -20,9 +34,14 @@ export class AddComponent {
         notes: "jejeje"
     }
 
-    constructor(private wineService: WineService) { }
+    constructor(private wineService: WineService, private calendar: NgbCalendar) { }
+
+    selectToday() {
+        this.model = this.calendar.getToday();
+    }
 
     add() {
+        debugger
         if (this.nuevo.name != null && this.nuevo.name?.trim().length === 0) { return; }
 
         this.wineService.addWine(this.nuevo);
