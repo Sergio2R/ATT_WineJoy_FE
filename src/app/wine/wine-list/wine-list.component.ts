@@ -5,7 +5,7 @@ import { WineService } from '../services/wine.service';
   selector: 'app-wine-list',
   templateUrl: './wine-list.component.html'
 })
-export class PersonajesComponent {
+export class WineListComponent {
 
     get personajes() {
     return this.wineService.wineList;

@@ -4,21 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { WineService } from '../api/services';
 import { AddComponent } from './add-wine/add-wine.component';
-
-// import { MainPageComponent } from './main-page/main-page.component';
-// import { PersonajesComponent } from './personajes/personajes.component';
-
-// import { DbzService } from './services/dbz.service';
-
+import { WineMainPageComponent } from './wine-main-page/wine-main-page';
+import { WineListComponent } from './wine-list/wine-list.component';
 
 @NgModule({
   declarations: [
-    // MainPageComponent,
-    // PersonajesComponent,
+    WineMainPageComponent,
+    WineListComponent,
     AddComponent
   ],
   exports: [
-    // MainPageComponent,
+    WineMainPageComponent,
   ],
   imports: [
     CommonModule,

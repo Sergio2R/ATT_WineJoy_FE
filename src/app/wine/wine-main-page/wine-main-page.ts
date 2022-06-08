@@ -5,10 +5,10 @@ import { Wine } from '../interfaces/wine.interface';
 import { WineService } from '../services/wine.service';
 
 @Component({
-  selector: 'app-main-page',
+  selector: 'app-wine-main-page',
   templateUrl: './wine-main-page.html'
 })
-export class MainPageComponent {
+export class WineMainPageComponent {
   nuevo: Wine = {
     nombre: 'Maestro Roshi',
     poder: 1000
