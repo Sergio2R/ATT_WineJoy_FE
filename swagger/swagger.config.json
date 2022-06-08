@@ -87,83 +87,6 @@
         }
       }
     },
-    "/api/Aroma/getAroma": {
-      "get": {
-        "tags": [
-          "Aroma"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Aroma"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Aroma"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Aroma"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Aroma/getAromaList": {
-      "get": {
-        "tags": [
-          "Aroma"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Aroma"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Aroma"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Aroma"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/Clasification/getClasification": {
       "get": {
         "tags": [
@@ -233,6 +156,83 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/Clasification"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Sweetness/getSweetness": {
+      "get": {
+        "tags": [
+          "Sweetness"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Sweetness"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Sweetness"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Sweetness"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Sweetness/getSweetnessList": {
+      "get": {
+        "tags": [
+          "Sweetness"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Sweetness"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Sweetness"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Sweetness"
                   }
                 }
               }
@@ -470,7 +470,7 @@
         },
         "additionalProperties": false
       },
-      "Aroma": {
+      "Clasification": {
         "type": "object",
         "properties": {
           "id": {
@@ -484,7 +484,7 @@
         },
         "additionalProperties": false
       },
-      "Clasification": {
+      "Sweetness": {
         "type": "object",
         "properties": {
           "id": {

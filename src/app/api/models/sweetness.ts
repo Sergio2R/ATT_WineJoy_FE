@@ -1,6 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface Aroma {
+export interface Sweetness {
   description?: null | string;
   id?: number;
 }
