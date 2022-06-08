@@ -69,4 +69,18 @@ export class AddComponent {
             notes: undefined
         }
     }
+
+    clear(){
+        this.nuevo = {
+            id: undefined,
+            name: undefined,
+            clasification: undefined,
+            year: undefined,
+            aroma: undefined,
+            swetness: undefined,
+            acidity: undefined,
+            alcohol: undefined,
+            notes: undefined
+        }
+    }
 }

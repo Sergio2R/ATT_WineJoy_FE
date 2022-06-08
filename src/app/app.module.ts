@@ -11,7 +11,6 @@ import { WineModule } from './wine/wine.module';
 //material
 import { MatTableModule } from '@angular/material/table'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //api
@@ -26,7 +25,6 @@ import { SweetnessService } from './wine/services/sweetness.service';
 @NgModule({
   declarations: [
     AppComponent,
-    HeroDetailComponent
   ],
   imports: [
     BrowserModule,

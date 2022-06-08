@@ -24,7 +24,7 @@
                 {{ wine.name }}
             </td>
             <td>
-                {{clasificationList[wine.clasification]?.description}}
+                {{clasificationList? clasificationList[wine?.clasification]?.description : ""}}
             </td>
             <td>
                 {{wine.year}}
@@ -33,10 +33,10 @@
                 {{wine.aroma}}
             </td>
             <td>
-                {{wine.swetness}}
+                {{sweetnessList? sweetnessList[wine?.swetness]?.description : ""}}
             </td>
             <td>
-                {{wine.acidity}}
+                {{acidityList? acidityList[wine?.acidity]?.description : ""}}
             </td>
             <td>
                 {{wine.alcohol}}
