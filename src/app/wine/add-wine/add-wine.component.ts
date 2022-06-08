@@ -29,9 +29,9 @@ export class AddComponent {
         year: undefined,
         aroma: undefined,
         swetness: undefined,
-        acidity: 4.1,
-        alcohol: 5.2,
-        notes: "jejeje"
+        acidity: undefined,
+        alcohol: undefined,
+        notes: undefined
     }
 
     constructor(private wineService: WineService, private calendar: NgbCalendar) { }

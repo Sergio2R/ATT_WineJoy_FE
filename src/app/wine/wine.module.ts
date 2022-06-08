@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import {MatSliderModule} from '@angular/material/slider';
     MatRippleModule,
     MatDatepickerModule,
     MatInputModule,
-    MatSliderModule
+    MatSliderModule,
+    MatIconModule,
+    MatIconModule
   ],
   providers: [
     WineService
