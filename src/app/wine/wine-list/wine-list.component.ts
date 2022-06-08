@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { WineService } from '../services/wine.service';
-
 import { Router } from '@angular/router';
+
+import { WineService } from '../services/wine.service';
 import { MessageService } from '../services/message.service';
+import { ClasificationService } from '../services/clasification.service';
+import { Clasification } from 'src/app/api/models';
 
 
 @Component({
@@ -11,9 +13,12 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['./wine-list.component.css']
 })
 export class WineListComponent {
+
   get wineList() {
     return this.wineService.wineList;
   }
+
+  clasificationList : Clasification[];
 
   public deleteById(id?: number) {
     this.wineService.deleteWine(id);
@@ -21,10 +26,14 @@ export class WineListComponent {
 
   public updateById(id?: number) {
     this.wineService.getWine(id);
-
   }
 
-  constructor(private wineService: WineService, private messageService: MessageService, private router: Router) {
+  public getClasificationList() {
+    this.clasificationList = this.clasificationService.getClasificationList();
+    return this.clasificationList;
+  }
+
+  constructor(private wineService: WineService, private clasificationService : ClasificationService, private messageService: MessageService, private router: Router) {
   }
 
 }

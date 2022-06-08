@@ -30,8 +30,8 @@ export class ClasificationService {
   getClasificationList() {
     this.api.apiClasificationGetClasificationListGet$Json().subscribe(rta => {
       this._clasificationList = rta;
-      return rta;
     });
+    return this._clasificationList;
   }
 
 }
