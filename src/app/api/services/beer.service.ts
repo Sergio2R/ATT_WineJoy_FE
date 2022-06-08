@@ -109,4 +109,178 @@ export class BeerService extends BaseService {
     );
   }
 
+  /**
+   * Path part for operation apiBeerAddBeerPost
+   */
+  static readonly ApiBeerAddBeerPostPath = '/api/Beer/addBeer';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `apiBeerAddBeerPost$Plain()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  apiBeerAddBeerPost$Plain$Response(params?: {
+    body?: Beer
+  }): Observable<StrictHttpResponse<Beer>> {
+
+    const rb = new RequestBuilder(this.rootUrl, BeerService.ApiBeerAddBeerPostPath, 'post');
+    if (params) {
+      rb.body(params.body, 'application/*+json');
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: 'text/plain'
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Beer>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `apiBeerAddBeerPost$Plain$Response()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  apiBeerAddBeerPost$Plain(params?: {
+    body?: Beer
+  }): Observable<Beer> {
+
+    return this.apiBeerAddBeerPost$Plain$Response(params).pipe(
+      map((r: StrictHttpResponse<Beer>) => r.body as Beer)
+    );
+  }
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `apiBeerAddBeerPost$Json()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  apiBeerAddBeerPost$Json$Response(params?: {
+    body?: Beer
+  }): Observable<StrictHttpResponse<Beer>> {
+
+    const rb = new RequestBuilder(this.rootUrl, BeerService.ApiBeerAddBeerPostPath, 'post');
+    if (params) {
+      rb.body(params.body, 'application/*+json');
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'json',
+      accept: 'text/json'
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Beer>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `apiBeerAddBeerPost$Json$Response()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  apiBeerAddBeerPost$Json(params?: {
+    body?: Beer
+  }): Observable<Beer> {
+
+    return this.apiBeerAddBeerPost$Json$Response(params).pipe(
+      map((r: StrictHttpResponse<Beer>) => r.body as Beer)
+    );
+  }
+
+  /**
+   * Path part for operation apiBeerUpdateBeerPost
+   */
+  static readonly ApiBeerUpdateBeerPostPath = '/api/Beer/updateBeer';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `apiBeerUpdateBeerPost$Plain()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  apiBeerUpdateBeerPost$Plain$Response(params?: {
+    body?: Beer
+  }): Observable<StrictHttpResponse<Beer>> {
+
+    const rb = new RequestBuilder(this.rootUrl, BeerService.ApiBeerUpdateBeerPostPath, 'post');
+    if (params) {
+      rb.body(params.body, 'application/*+json');
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: 'text/plain'
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Beer>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `apiBeerUpdateBeerPost$Plain$Response()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  apiBeerUpdateBeerPost$Plain(params?: {
+    body?: Beer
+  }): Observable<Beer> {
+
+    return this.apiBeerUpdateBeerPost$Plain$Response(params).pipe(
+      map((r: StrictHttpResponse<Beer>) => r.body as Beer)
+    );
+  }
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `apiBeerUpdateBeerPost$Json()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  apiBeerUpdateBeerPost$Json$Response(params?: {
+    body?: Beer
+  }): Observable<StrictHttpResponse<Beer>> {
+
+    const rb = new RequestBuilder(this.rootUrl, BeerService.ApiBeerUpdateBeerPostPath, 'post');
+    if (params) {
+      rb.body(params.body, 'application/*+json');
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'json',
+      accept: 'text/json'
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Beer>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `apiBeerUpdateBeerPost$Json$Response()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  apiBeerUpdateBeerPost$Json(params?: {
+    body?: Beer
+  }): Observable<Beer> {
+
+    return this.apiBeerUpdateBeerPost$Json$Response(params).pipe(
+      map((r: StrictHttpResponse<Beer>) => r.body as Beer)
+    );
+  }
+
 }

@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Wine } from '../interfaces/dbz.interface';
-
+import { Wine } from '../interfaces/wine.interface';
 
 @Injectable()
-export class DbzService {
+export class WineService {
 
-    private _personajes: Personaje[] = [
+    private _wineList: Wine[] = [
         {
           nombre: 'Goku',
           poder: 15000
@@ -16,14 +15,14 @@ export class DbzService {
         }
     ];
 
-    get personajes(): Personaje[] {
-        return [...this._personajes];
+    get wineList(): Wine[] {
+        return [...this._wineList];
     }
 
     constructor() {}
 
-    agregarPersonaje( personaje: Personaje ) {
-        this._personajes.push( personaje );
+    addWine( personaje: Wine ) {
+        this._wineList.push( personaje );
     }
 
 }

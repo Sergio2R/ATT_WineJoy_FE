@@ -6,6 +6,7 @@ import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { BeerService } from './services/beer.service';
 import { WeatherForecastService } from './services/weather-forecast.service';
+import { WineService } from './services/wine.service';
 
 /**
  * Module that provides all services and configuration.
@@ -17,6 +18,7 @@ import { WeatherForecastService } from './services/weather-forecast.service';
   providers: [
     BeerService,
     WeatherForecastService,
+    WineService,
     ApiConfiguration
   ],
 })

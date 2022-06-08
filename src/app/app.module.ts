@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { DbzModule } from './dbz/dbz.module';
+import { WineModule } from './wine/wine.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DbzModule } from './dbz/dbz.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DbzModule
+    DbzModule,
+    WineModule
   ],
   providers: [],
   bootstrap: [AppComponent]
