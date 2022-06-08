@@ -1,3 +1,2 @@
-export { Beer } from './models/beer';
-export { WeatherForecast } from './models/weather-forecast';
+export { Clasification } from './models/clasification';
 export { Wine } from './models/wine';

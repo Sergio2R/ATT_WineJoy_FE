@@ -30,7 +30,7 @@ export class AddComponent {
         year: 2000,
         aroma: undefined,
         swetness: 0,
-        acidity: 0,
+        acidity: 1,
         alcohol: 0,
         notes: undefined
     }
