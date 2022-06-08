@@ -6,7 +6,8 @@ import { MessageService } from '../services/message.service';
 import { ClasificationService } from '../services/clasification.service';
 import { ClasificationService as ApiClasificationService } from '../../api/services';
 import { Clasification } from 'src/app/api/models';
-
+import { SweetnessService as ApiSweetnessService } from '../../api/services';
+import { Sweetness } from 'src/app/api/models';
 
 @Component({
   selector: 'app-wine-list',
@@ -15,11 +16,13 @@ import { Clasification } from 'src/app/api/models';
 })
 export class WineListComponent {
 
+  clasificationList: Clasification[];
+  sweetnessList: Sweetness[];
+  clasificationList: Clasification[];
+
   get wineList() {
     return this.wineService.wineList;
   }
-
-  clasificationList: Clasification[];
 
   public deleteById(id?: number) {
     this.wineService.deleteWine(id);
@@ -28,12 +31,15 @@ export class WineListComponent {
   public updateById(id?: number) {
     this.wineService.getWine(id);
   }
-  constructor(private wineService: WineService, private clasificationService: ClasificationService, private apiClasificationService: ApiClasificationService, private messageService: MessageService, private router: Router) {
+  constructor(private wineService: WineService, private clasificationService: ClasificationService, private apiSweetnessService: ApiSweetnessService, private apiClasificationService: ApiClasificationService, private messageService: MessageService, private router: Router) {
   }
 
   ngOnInit() {
     this.apiClasificationService.apiClasificationGetClasificationListGet$Json().subscribe(rta => {
       this.clasificationList = rta;
+    });
+    this.apiSweetnessService.apiSweetnessGetSweetnessListGet$Json().subscribe(rta => {
+      this.sweetnessList = rta;
     });
   }
 }
