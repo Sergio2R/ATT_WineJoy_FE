@@ -4,6 +4,7 @@ import { Wine } from '../interfaces/wine.interface';
 @Injectable()
 export class WineService {
 
+  // public wine: Wine = {};
     private _wineList: Wine[] = [
         {
           nombre: 'Goku',
@@ -22,6 +23,7 @@ export class WineService {
     constructor() {}
 
     addWine( personaje: Wine ) {
+      debugger
         this._wineList.push( personaje );
     }
 

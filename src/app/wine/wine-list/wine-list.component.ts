@@ -7,10 +7,12 @@ import { WineService } from '../services/wine.service';
 })
 export class WineListComponent {
 
-    get personajes() {
+    get wineList() {
     return this.wineService.wineList;
   }
 
-  constructor( private wineService : WineService ) {}
+  constructor( private wineService : WineService ) {
+    debugger
+  }
 
 }

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { DbzModule } from './dbz/dbz.module';
+import { WineService } from './wine/services/wine.service';
 import { WineModule } from './wine/wine.module';
 
 @NgModule({
@@ -19,7 +20,7 @@ import { WineModule } from './wine/wine.module';
     DbzModule,
     WineModule
   ],
-  providers: [],
+  providers: [ WineService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
