@@ -1,4 +1,4 @@
-export interface Aroma {
+export interface Sweetness {
     id?: number;
     clasification?: number;
 }
