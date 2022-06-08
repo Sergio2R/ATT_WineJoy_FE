@@ -20,6 +20,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
 import { MessageService } from './services/message.service';
 
 @NgModule({
@@ -49,7 +50,8 @@ import { MessageService } from './services/message.service';
     MatInputModule,
     MatSliderModule,
     MatIconModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [
     WineService,

@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 
+import { ClasificationService as ApiClasificationService } from '../../api/services';
+import { Clasification } from 'src/app/api/models';
+
 @Component({
     selector: 'app-add-wine',
     templateUrl: './add-wine.component.html',
@@ -22,6 +25,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 export class AddComponent {
 
     date: { year: number; };
+    clasificationList: Clasification[];
 
     maxDate = new Date();
     @Input() nuevo: Wine = {
@@ -35,7 +39,13 @@ export class AddComponent {
         notes: undefined
     }
 
-    constructor(private wineService: WineService, private calendar: NgbCalendar) { }
+    constructor(private wineService: WineService, private calendar: NgbCalendar, private apiClasificationService: ApiClasificationService) { }
+
+    ngOnInit() {
+        this.apiClasificationService.apiClasificationGetClasificationListGet$Json().subscribe(rta => {
+            this.clasificationList = rta;
+        });
+    }
 
     onInputChange(event: any) {
         console.log(event.value);
@@ -47,16 +57,16 @@ export class AddComponent {
 
         this.wineService.addWine(this.nuevo);
 
-        // this.nuevo = {
-        //     id: undefined,
-        //     name: undefined,
-        //     clasification: undefined,
-        //     year: undefined,
-        //     aroma: undefined,
-        //     swetness: undefined,
-        //     acidity: undefined,
-        //     alcohol: undefined,
-        //     notes: undefined
-        // }
+        this.nuevo = {
+            id: undefined,
+            name: undefined,
+            clasification: undefined,
+            year: undefined,
+            aroma: undefined,
+            swetness: undefined,
+            acidity: undefined,
+            alcohol: undefined,
+            notes: undefined
+        }
     }
 }

@@ -4,6 +4,8 @@ import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core
 import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
+import { AcidityService } from './services/acidity.service';
+import { AromaService } from './services/aroma.service';
 import { ClasificationService } from './services/clasification.service';
 import { WineService } from './services/wine.service';
 
@@ -15,6 +17,8 @@ import { WineService } from './services/wine.service';
   exports: [],
   declarations: [],
   providers: [
+    AcidityService,
+    AromaService,
     ClasificationService,
     WineService,
     ApiConfiguration
