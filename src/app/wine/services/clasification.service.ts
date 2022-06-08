@@ -12,13 +12,9 @@ export class ClasificationService {
   ];
 
   public constructor(private api: ApiClasificationService, private router: Router, private activatedRoute: ActivatedRoute) {
-    // this.api.apiClasificationGetClasification().subscribe(rta => {
-    //   this._clasificationList = rta;
-    // });
-
-    // this.api.apiWineGetWineListGet$Json().subscribe(rta => {
-    //   this._wineList = rta;
-    // });
+    this.api.apiClasificationGetClasificationListGet$Json().subscribe(rta => {
+      this._clasificationList = rta;
+    });
   }
 
   get clasificationList(): Clasification[] {
@@ -26,9 +22,15 @@ export class ClasificationService {
   }
 
   getClasification(id: number) {
-    debugger
     this.api.apiClasificationGetClasificationGet$Json( { Id: id }).subscribe(rta => {
-      debugger
+      return rta;
+    });
+  }
+
+  getClasificationList() {
+    this.api.apiClasificationGetClasificationListGet$Json().subscribe(rta => {
+      this._clasificationList = rta;
+      return rta;
     });
   }
 

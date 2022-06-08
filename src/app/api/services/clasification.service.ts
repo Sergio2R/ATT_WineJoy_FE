@@ -110,20 +110,20 @@ export class ClasificationService extends BaseService {
   }
 
   /**
-   * Path part for operation apiClasificationGetClasificationsGet
+   * Path part for operation apiClasificationGetClasificationListGet
    */
-  static readonly ApiClasificationGetClasificationsGetPath = '/api/Clasification/getClasifications';
+  static readonly ApiClasificationGetClasificationListGetPath = '/api/Clasification/getClasificationList';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `apiClasificationGetClasificationsGet$Plain()` instead.
+   * To access only the response body, use `apiClasificationGetClasificationListGet$Plain()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiClasificationGetClasificationsGet$Plain$Response(params?: {
+  apiClasificationGetClasificationListGet$Plain$Response(params?: {
   }): Observable<StrictHttpResponse<Array<Clasification>>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ClasificationService.ApiClasificationGetClasificationsGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ClasificationService.ApiClasificationGetClasificationListGetPath, 'get');
     if (params) {
     }
 
@@ -140,28 +140,28 @@ export class ClasificationService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `apiClasificationGetClasificationsGet$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `apiClasificationGetClasificationListGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiClasificationGetClasificationsGet$Plain(params?: {
+  apiClasificationGetClasificationListGet$Plain(params?: {
   }): Observable<Array<Clasification>> {
 
-    return this.apiClasificationGetClasificationsGet$Plain$Response(params).pipe(
+    return this.apiClasificationGetClasificationListGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<Array<Clasification>>) => r.body as Array<Clasification>)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `apiClasificationGetClasificationsGet$Json()` instead.
+   * To access only the response body, use `apiClasificationGetClasificationListGet$Json()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiClasificationGetClasificationsGet$Json$Response(params?: {
+  apiClasificationGetClasificationListGet$Json$Response(params?: {
   }): Observable<StrictHttpResponse<Array<Clasification>>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ClasificationService.ApiClasificationGetClasificationsGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ClasificationService.ApiClasificationGetClasificationListGetPath, 'get');
     if (params) {
     }
 
@@ -178,14 +178,14 @@ export class ClasificationService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `apiClasificationGetClasificationsGet$Json$Response()` instead.
+   * To access the full response (for headers, for example), `apiClasificationGetClasificationListGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiClasificationGetClasificationsGet$Json(params?: {
+  apiClasificationGetClasificationListGet$Json(params?: {
   }): Observable<Array<Clasification>> {
 
-    return this.apiClasificationGetClasificationsGet$Json$Response(params).pipe(
+    return this.apiClasificationGetClasificationListGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<Array<Clasification>>) => r.body as Array<Clasification>)
     );
   }

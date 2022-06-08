@@ -49,7 +49,7 @@
         }
       }
     },
-    "/api/Clasification/getClasifications": {
+    "/api/Clasification/getClasificationList": {
       "get": {
         "tags": [
           "Clasification"
