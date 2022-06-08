@@ -10,15 +10,17 @@ import { WineModule } from './wine/wine.module';
 
 //material
 import { MatTableModule } from '@angular/material/table'
-
-//api
-import { WineService as ApiWineService } from './api/services';
-import { ClasificationService as ApiClasificationService } from './api/services';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ClasificationService } from './wine/services/clasification.service';
 
+//api
+import { WineService as ApiWineService } from './api/services';
+
+import { ClasificationService as ApiClasificationService } from './api/services';
+import { ClasificationService } from './wine/services/clasification.service';
+import { ClasificationService as ApiSweetnessService } from './api/services';
+import { SweetnessService } from './wine/services/sweetness.service';
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { ClasificationService } from './wine/services/clasification.service';
     WineService,
     ClasificationService,
     ApiClasificationService,
+    SweetnessService,
     ApiWineService],
   bootstrap: [AppComponent]
 })
