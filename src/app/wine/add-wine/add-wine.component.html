@@ -1,121 +1,125 @@
-<h3>Add a wine</h3>
-<hr>
+<div class="container">
 
-<form (ngSubmit)="add()">
+    <h2>Add new Wine experiences or modify previous ones</h2>
+    <hr>
+    <form (ngSubmit)="add()">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <mat-form-field appearance="standard">
-                    <mat-label>Wine Name</mat-label>
-                    <input type="text" matInput placeholder="Cabernet Sauvignon" name="name" [(ngModel)]="nuevo.name"
-                        maxlength="15">
-                    <mat-icon matSuffix><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
-                            height="24" viewBox="0 0 24 24" width="24">
-                            <rect fill="none" height="24" width="24" />
-                            <path
-                                d="M6,3l0,6c0,2.97,2.16,5.43,5,5.91V19H8v2h8v-2h-3v-4.09c2.84-0.48,5-2.94,5-5.91l0-6H6z M16,8H8l0-3h8C16,5,16,8,16,8z" />
-                        </svg></mat-icon>
-                    <mat-hint>Name</mat-hint>
-                </mat-form-field>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Wine Name</mat-label>
+                        <input type="text" matInput placeholder="Cabernet Sauvignon" name="name"
+                            [(ngModel)]="nuevo.name" maxlength="15">
+                        <mat-icon matSuffix><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+                                height="24" viewBox="0 0 24 24" width="24">
+                                <rect fill="none" height="24" width="24" />
+                                <path
+                                    d="M6,3l0,6c0,2.97,2.16,5.43,5,5.91V19H8v2h8v-2h-3v-4.09c2.84-0.48,5-2.94,5-5.91l0-6H6z M16,8H8l0-3h8C16,5,16,8,16,8z" />
+                            </svg></mat-icon>
+                        <mat-hint>Name</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm">
+                    <mat-label>Elaboration Date</mat-label>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <input placeholder="Date" matInput [matDatepicker]="picker" name="fullYear"
+                        [(ngModel)]="nuevo.fullYear" [max]="maxDate">
+                </div>
             </div>
-            <div class="col-sm">
-                <mat-label>Elaboration Date</mat-label>
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-                <input placeholder="Date" matInput [matDatepicker]="picker" name="fullYear" [(ngModel)]="nuevo.fullYear"
-                    [max]="maxDate">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <input type="number" placeholder="Clasification" name="clasification"
-                    [(ngModel)]="nuevo.clasification" />
-            </div>
-            <div class="col-sm">
-                <mat-form-field appearance="standard">
-                    <mat-label>Aroma</mat-label>
-                    <input type="text" matInput placeholder="Fragances of ..." name="aroma" [(ngModel)]="nuevo.aroma"
-                        maxlength="15">
-                    <mat-icon matSuffix>
-                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
-                            viewBox="0 0 24 24" width="24">
-                            <g>
-                                <path d="M0,0h24v24H0V0z" fill="none" />
-                            </g>
-                            <g>
+            <div class="row">
+                <div class="col-sm">
+                    <input type="number" placeholder="Clasification" name="clasification"
+                        [(ngModel)]="nuevo.clasification" />
+                </div>
+                <div class="col-sm">
+                    <mat-form-field appearance="standard">
+                        <mat-label>Aroma</mat-label>
+                        <input type="text" matInput placeholder="Fragances of ..." name="aroma"
+                            [(ngModel)]="nuevo.aroma" maxlength="15">
+                        <mat-icon matSuffix>
+                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
+                                viewBox="0 0 24 24" width="24">
                                 <g>
-                                    <path
-                                        d="M14.5,17c0,1.65-1.35,3-3,3s-3-1.35-3-3h2c0,0.55,0.45,1,1,1s1-0.45,1-1s-0.45-1-1-1H2v-2h9.5 C13.15,14,14.5,15.35,14.5,17z M19,6.5C19,4.57,17.43,3,15.5,3S12,4.57,12,6.5h2C14,5.67,14.67,5,15.5,5S17,5.67,17,6.5 S16.33,8,15.5,8H2v2h13.5C17.43,10,19,8.43,19,6.5z M18.5,11H2v2h16.5c0.83,0,1.5,0.67,1.5,1.5S19.33,16,18.5,16v2 c1.93,0,3.5-1.57,3.5-3.5S20.43,11,18.5,11z" />
+                                    <path d="M0,0h24v24H0V0z" fill="none" />
                                 </g>
-                            </g>
-                        </svg>
-                    </mat-icon>
-                    <mat-hint>Aroma description</mat-hint>
-                </mat-form-field>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M14.5,17c0,1.65-1.35,3-3,3s-3-1.35-3-3h2c0,0.55,0.45,1,1,1s1-0.45,1-1s-0.45-1-1-1H2v-2h9.5 C13.15,14,14.5,15.35,14.5,17z M19,6.5C19,4.57,17.43,3,15.5,3S12,4.57,12,6.5h2C14,5.67,14.67,5,15.5,5S17,5.67,17,6.5 S16.33,8,15.5,8H2v2h13.5C17.43,10,19,8.43,19,6.5z M18.5,11H2v2h16.5c0.83,0,1.5,0.67,1.5,1.5S19.33,16,18.5,16v2 c1.93,0,3.5-1.57,3.5-3.5S20.43,11,18.5,11z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </mat-icon>
+                        <mat-hint>Aroma description</mat-hint>
+                    </mat-form-field>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm d-flex justify-content-center">
-                <mat-hint>Swetness</mat-hint>
-                <mat-slider matInput aria-label="unit(s)" vertical min="0" max="5" step="1" value="0" thumbLabel tickInterval="1"
-                    name="swetness" [(ngModel)]="nuevo.swetness"></mat-slider>
-                <mat-icon matSuffix><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h.71C7.37 7.69 9.48 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3s-1.34 3-3 3z" />
-                    </svg></mat-icon>
-                <mat-hint>Level of swetness</mat-hint>
-            </div>
-            <div class="col-sm d-flex justify-content-center">
-                <mat-hint>Acidity</mat-hint>
-                <mat-slider matInput aria-label="unit(s)" vertical min="0" max="3" step="1" value="1" thumbLabel tickInterval="1"
-                    name="acidity" [(ngModel)]="nuevo.acidity"></mat-slider>
-                <mat-icon matSuffix><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h.71C7.37 7.69 9.48 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3s-1.34 3-3 3z" />
-                    </svg></mat-icon>
-                <mat-hint>Level of acidity</mat-hint>
-            </div>
-        </div>
-        <div class="row" class="alcohol-row">
-            <div class="col-sm d-flex justify-content-center">
-                <mat-hint>Alcohol level</mat-hint>
-                <mat-slider class="alcohol-slider" matInput aria-label="unit(s)" min="0" max="100" value="0" step="1" thumbLabel
-                    tickInterval="1" name="alcohol" [(ngModel)]="nuevo.alcohol"></mat-slider>
-                <mat-icon matSuffix>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <path d="M21 5V3H3v2l8 9v5H6v2h12v-2h-5v-5l8-9zM7.43 7L5.66 5h12.69l-1.78 2H7.43z" />
-                    </svg>
-                </mat-icon>
-                <mat-hint>(%)</mat-hint>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Describe any adition information</mat-label>
-                    <textarea maxlength="200" matInput placeholder="When I started to..." name="notes"
-                        [(ngModel)]="nuevo.notes"></textarea>
+            <div class="row">
+                <div class="col-sm d-flex justify-content-center">
+                    <mat-hint>Swetness</mat-hint>
+                    <mat-slider matInput aria-label="unit(s)" vertical min="0" max="5" step="1" value="0" thumbLabel
+                        tickInterval="1" name="swetness" [(ngModel)]="nuevo.swetness"></mat-slider>
                     <mat-icon matSuffix><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
                             width="24">
-                            <path d="M0 0h24v24H0V0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
                             <path
-                                d="M19 1l-5 5v11l5-4.5V1zM1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5V6c-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6zm22 13.5V6c-.6-.45-1.25-.75-2-1v13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5v2c1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5v-1.1z" />
+                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h.71C7.37 7.69 9.48 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3s-1.34 3-3 3z" />
                         </svg></mat-icon>
-                </mat-form-field>
+                    <mat-hint>Level of swetness</mat-hint>
+                </div>
+                <div class="col-sm d-flex justify-content-center">
+                    <mat-hint>Acidity</mat-hint>
+                    <mat-slider matInput aria-label="unit(s)" vertical min="0" max="3" step="1" value="1" thumbLabel
+                        tickInterval="1" name="acidity" [(ngModel)]="nuevo.acidity"></mat-slider>
+                    <mat-icon matSuffix><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                            width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h.71C7.37 7.69 9.48 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3s-1.34 3-3 3z" />
+                        </svg></mat-icon>
+                    <mat-hint>Level of acidity</mat-hint>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Add</button>
-                <button type="submit" class="btn btn-secondary">Clear</button>
+            <div class="row" class="alcohol-row">
+                <div class="col-sm d-flex justify-content-center">
+                    <mat-hint>Alcohol level</mat-hint>
+                    <mat-slider class="alcohol-slider" matInput aria-label="unit(s)" min="0" max="100" value="0"
+                        step="1" thumbLabel tickInterval="1" name="alcohol" [(ngModel)]="nuevo.alcohol"></mat-slider>
+                    <mat-icon matSuffix>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M21 5V3H3v2l8 9v5H6v2h12v-2h-5v-5l8-9zM7.43 7L5.66 5h12.69l-1.78 2H7.43z" />
+                        </svg>
+                    </mat-icon>
+                    <mat-hint>(%)</mat-hint>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Describe any adition information</mat-label>
+                        <textarea maxlength="200" matInput placeholder="When I started to..." name="notes"
+                            [(ngModel)]="nuevo.notes"></textarea>
+                        <mat-icon matSuffix><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+                                width="24">
+                                <path d="M0 0h24v24H0V0z" fill="none" />
+                                <path
+                                    d="M19 1l-5 5v11l5-4.5V1zM1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5V6c-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6zm22 13.5V6c-.6-.45-1.25-.75-2-1v13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5v2c1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5v-1.1z" />
+                            </svg></mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Add</button>
+                    <button type="submit" class="btn btn-secondary">Clear</button>
 
-            </div>
-            <div class="col-sm">
+                </div>
+                <div class="col-sm">
+                </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
