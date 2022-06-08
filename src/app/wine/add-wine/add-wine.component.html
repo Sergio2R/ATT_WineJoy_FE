@@ -3,11 +3,23 @@
 
 <form (ngSubmit)="add()">
     <input type="text" placeholder="Name" name="name" [(ngModel)]="nuevo.name" />
+
     <input type="number" placeholder="Clasification" name="clasification" [(ngModel)]="nuevo.clasification" />
-    <input matInput [matDatepicker]="picker" name="year" [(ngModel)]="nuevo.year" [max]="maxDate">
-    <mat-hint>YYYY</mat-hint>
-    <mat-datepicker-toggle placeholder="Date" matSuffix [for]="picker"></mat-datepicker-toggle>
+
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
+    <input placeholder="Date" matInput [matDatepicker]="picker" name="year" [(ngModel)]="nuevo.year" [max]="maxDate">
+
+    <input type="text" placeholder="Aroma" name="aroma" [(ngModel)]="nuevo.aroma" />
+
+    <mat-hint>Swetness</mat-hint>
+    <mat-slider matInput aria-label="unit(s)" vertical min="0" max="5" step="1" thumbLabel tickInterval="1" name="swetness" [(ngModel)]="nuevo.swetness"></mat-slider>
+
+    <mat-hint>Acidity</mat-hint>
+    <mat-slider matInput aria-label="unit(s)" vertical min="0" max="3" step="1" thumbLabel tickInterval="1" name="acidity" [(ngModel)]="nuevo.acidity"></mat-slider>
+
+    <mat-slider matInput aria-label="unit(s)" min="0" max="100" step="0.1" thumbLabel tickInterval="1" name="alcohol" [(ngModel)]="nuevo.alcohol"></mat-slider>
+
     <button type="submit">
         Agregar
     </button>

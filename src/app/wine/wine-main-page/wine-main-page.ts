@@ -10,12 +10,12 @@ import { WineService } from '../services/wine.service';
 })
 export class WineMainPageComponent {
   nuevo: Wine = {
-    id : 10,
-    name: "test",
-    clasification : 0,
-    year: 1,
-    aroma: "good",
-    swetness: 3.0,
+    // id : 10,
+    name: "",
+    clasification : undefined,
+    year: undefined,
+    aroma: undefined,
+    swetness: undefined,
     acidity: 4.1,
     alcohol: 5.2,
     notes: "jejeje"

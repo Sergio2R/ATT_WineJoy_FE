@@ -16,19 +16,19 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 
 @Component({
     selector: 'app-add-wine',
-    templateUrl: './add-wine.component.html'
+    templateUrl: './add-wine.component.html',
+    styleUrls: ['./add-wine.component.css']
 })
 export class AddComponent {
 
-    model: NgbDateStruct;
     date: { year: number; month: number; };
     maxDate = new Date();
     @Input() nuevo: Wine = {
-        name: "test",
-        clasification: 0,
-        year: 1,
-        aroma: "good",
-        swetness: 3.0,
+        name: undefined,
+        clasification: undefined,
+        year: undefined,
+        aroma: undefined,
+        swetness: undefined,
         acidity: 4.1,
         alcohol: 5.2,
         notes: "jejeje"
@@ -36,9 +36,9 @@ export class AddComponent {
 
     constructor(private wineService: WineService, private calendar: NgbCalendar) { }
 
-    selectToday() {
-        this.model = this.calendar.getToday();
-    }
+    onInputChange(event: any) {
+        console.log(event.value);
+      }
 
     add() {
         debugger
