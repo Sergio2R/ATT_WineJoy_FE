@@ -10,21 +10,33 @@ import { WineService } from '../services/wine.service';
 export class AddComponent {
 
     @Input() nuevo: Wine = {
-        nombre: '',
-        poder: 0
+        name: "test",
+        clasification: 0,
+        year: 1,
+        aroma: "good",
+        Fswetness: 3.0,
+        acidity: 4.1,
+        alcohol: 5.2,
+        notes: "jejeje"
     }
 
     constructor(private wineService: WineService) { }
 
     add() {
-        if (this.nuevo.nombre.trim().length === 0) { return; }
+        if (this.nuevo.name != null && this.nuevo.name?.trim().length === 0) { return; }
 
         this.wineService.addWine(this.nuevo);
 
         this.nuevo = {
-            nombre: '',
-            poder: 0
+            id: undefined,
+            name: undefined,
+            clasification: undefined,
+            year: undefined,
+            aroma: undefined,
+            Fswetness: undefined,
+            acidity: undefined,
+            alcohol: undefined,
+            notes: undefined
         }
-
     }
 }

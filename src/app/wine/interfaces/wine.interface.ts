@@ -1,4 +1,11 @@
 export interface Wine {
-    nombre: string;
-    poder : number;
+    acidity?: number;
+    alcohol?: number;
+    aroma?: null | string;
+    clasification?: number;
+    id?: number;
+    name?: null | string;
+    notes?: null | string;
+    Fswetness?: number;
+    year?: number;
 }

@@ -1,4 +1,4 @@
-<h3>Add <small>{{ nuevo.nombre }}</small></h3>
+<h3>Add a wine</h3>
 <hr>
 
 <form (ngSubmit)="add()">
@@ -6,13 +6,13 @@
         type="text" 
         placeholder="Nombre" 
         name="nombre"
-        [(ngModel)]="nuevo.nombre"
+        [(ngModel)]="nuevo.name"
     />
     <input 
         type="number" 
         placeholder="Poder" 
         name="poder"
-        [(ngModel)]="nuevo.poder"
+        [(ngModel)]="nuevo.clasification"
     />
     <button type="submit">
         Agregar

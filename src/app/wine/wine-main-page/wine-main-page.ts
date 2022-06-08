@@ -10,8 +10,15 @@ import { WineService } from '../services/wine.service';
 })
 export class WineMainPageComponent {
   nuevo: Wine = {
-    nombre: 'Maestro Roshi',
-    poder: 1000
+    id : 10,
+    name: "test",
+    clasification : 0,
+    year: 1,
+    aroma: "good",
+    Fswetness: 3.0,
+    acidity: 4.1,
+    alcohol: 5.2,
+    notes: "jejeje"
   }
 
   constructor() {}

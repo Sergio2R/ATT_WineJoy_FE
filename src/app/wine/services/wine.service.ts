@@ -1,30 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Wine } from '../interfaces/wine.interface';
 
+import { WineService as ApiWineService } from 'src/app/api/services';
+
 @Injectable()
 export class WineService {
 
-  // public wine: Wine = {};
-    private _wineList: Wine[] = [
-        {
-          nombre: 'Goku',
-          poder: 15000
-        },
-        {
-          nombre: 'Vegeta',
-          poder: 7500
-        }
-    ];
+  private _wineList: Wine[] = [
+  ];
 
-    get wineList(): Wine[] {
-        return [...this._wineList];
-    }
-
-    constructor() {}
-
-    addWine( personaje: Wine ) {
+  public constructor(private api: ApiWineService) {
+    this.api.apiWineGetWineListGet$Json().subscribe(rta => {
+      this._wineList = rta;
       debugger
-        this._wineList.push( personaje );
-    }
+    });
+  }
+
+  get wineList(): Wine[] {
+    return [...this._wineList];
+  }
+
+  addWine(personaje: Wine) {
+    debugger
+    this._wineList.push(personaje);
+  }
 
 }

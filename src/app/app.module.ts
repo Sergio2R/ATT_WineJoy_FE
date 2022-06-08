@@ -9,6 +9,9 @@ import { DbzModule } from './dbz/dbz.module';
 import { WineService } from './wine/services/wine.service';
 import { WineModule } from './wine/wine.module';
 
+//api
+import { WineService as ApiWineService } from './api/services';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +23,8 @@ import { WineModule } from './wine/wine.module';
     DbzModule,
     WineModule
   ],
-  providers: [ WineService ],
+  providers: [WineService,
+    ApiWineService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
