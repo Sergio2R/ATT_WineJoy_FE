@@ -12,7 +12,6 @@ export class WineService {
   public constructor(private api: ApiWineService) {
     this.api.apiWineGetWineListGet$Json().subscribe(rta => {
       this._wineList = rta;
-      debugger
     });
   }
 
@@ -21,7 +20,6 @@ export class WineService {
   }
 
   addWine(personaje: Wine) {
-    debugger
     this._wineList.push(personaje);
   }
 

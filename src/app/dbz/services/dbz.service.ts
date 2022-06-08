@@ -22,7 +22,6 @@ export class DbzService {
     constructor() {}
 
     agregarPersonaje( personaje: Personaje ) {
-      debugger
         this._personajes.push( personaje );
     }
 
