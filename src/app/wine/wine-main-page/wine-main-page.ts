@@ -15,7 +15,7 @@ export class WineMainPageComponent {
     clasification : 0,
     year: 1,
     aroma: "good",
-    Fswetness: 3.0,
+    swetness: 3.0,
     acidity: 4.1,
     alcohol: 5.2,
     notes: "jejeje"

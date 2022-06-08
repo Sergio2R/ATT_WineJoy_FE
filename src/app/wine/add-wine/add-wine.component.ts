@@ -14,7 +14,7 @@ export class AddComponent {
         clasification: 0,
         year: 1,
         aroma: "good",
-        Fswetness: 3.0,
+        swetness: 3.0,
         acidity: 4.1,
         alcohol: 5.2,
         notes: "jejeje"
@@ -33,7 +33,7 @@ export class AddComponent {
             clasification: undefined,
             year: undefined,
             aroma: undefined,
-            Fswetness: undefined,
+            swetness: undefined,
             acidity: undefined,
             alcohol: undefined,
             notes: undefined

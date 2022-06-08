@@ -6,6 +6,6 @@ export interface Wine {
     id?: number;
     name?: null | string;
     notes?: null | string;
-    Fswetness?: number;
+    swetness?: number;
     year?: number;
 }

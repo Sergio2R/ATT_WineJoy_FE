@@ -10,6 +10,7 @@
             <th scope="col">Acidity Level</th>
             <th scope="col">Alcohol (%)</th>
             <th scope="col">Aditional Notes</th>
+            <th scope="col" span="2" class="text-center">ACTIONS</th>
         </tr>
     </thead>
     <tbody>
@@ -28,7 +29,7 @@
                 {{wine.year}}
             </td>
             <td>
-                {{wine.Fswetness}}
+                {{wine.swetness}}
             </td>
             <td>
                 {{wine.acidity}}
@@ -38,6 +39,12 @@
             </td>
             <td>
                 {{wine.notes}}
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-danger btn-sm" (click)="deleteById(wine.id)" >Delete </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-warning btn-sm" (click)="updateById(wine.id)" >Update</button>
             </td>
         </tr>
     </tbody>

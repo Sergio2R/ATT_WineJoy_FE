@@ -12,6 +12,14 @@ export class WineListComponent {
     return this.wineService.wineList;
   }
 
+  public deleteById(id?: number){
+    debugger;
+  }
+
+  public updateById(id?: number){
+    debugger;
+  }
+
   constructor(private wineService: WineService) {
   }
 
