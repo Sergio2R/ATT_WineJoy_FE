@@ -7,6 +7,10 @@ import { AddComponent } from './add-wine/add-wine.component';
 import { WineMainPageComponent } from './wine-main-page/wine-main-page';
 import { WineListComponent } from './wine-list/wine-list.component';
 
+
+//material 
+import { MatTableModule } from '@angular/material/table'  
+
 @NgModule({
   declarations: [
     WineMainPageComponent,
@@ -18,7 +22,9 @@ import { WineListComponent } from './wine-list/wine-list.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    //Material
+    MatTableModule
   ],
   providers: [
     WineService

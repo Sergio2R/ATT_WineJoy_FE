@@ -9,20 +9,32 @@ import { DbzModule } from './dbz/dbz.module';
 import { WineService } from './wine/services/wine.service';
 import { WineModule } from './wine/wine.module';
 
+//material
+import { MatTableModule } from '@angular/material/table'  
+
 //api
 import { WineService as ApiWineService } from './api/services';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DbzModule,
-    WineModule
-  ],
+    BrowserAnimationsModule,
+    //Material
+    MatTableModule,
+    //Project
+    DbzModule, 
+    WineModule,
+  ], 
   providers: [WineService,
     ApiWineService],
   bootstrap: [AppComponent]
